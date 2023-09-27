@@ -1,0 +1,24 @@
+.mat-sidenav-container {
+    position: absolute; /* Adjust position if necessary */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    
+    
+    
+  }
+  .tp-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    
+
+ }
+
+ mat-sidenav {
+    width: 200px;
+  }
+

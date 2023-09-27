@@ -1,0 +1,23 @@
+            <mat-sidenav-container class="tp-container">
+                <mat-toolbar class="mat-elevation-z8">
+                    <button mat-icon-button (click)="toggleSidebar()">
+                        <mat-icon>{{ isOpen ? 'menu_open' : 'menu' }}</mat-icon>
+                        </button>            
+                  </mat-toolbar>
+                <mat-sidenav mode="side" [opened]="isOpen">
+                <!-- Your navbar content goes here -->
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/temperature">Temperature</a>
+                    <a mat-list-item routerLink="/home">Home</a>
+                    <!-- Add more navigation links as needed -->
+                </mat-nav-list>
+                </mat-sidenav>
+                <mat-sidenav-content>
+                    <button style="position: fixed; top:0px;z-index: 2;" mat-button (click)="toggleSidebar()">
+                        <mat-icon>{{ isOpen ? 'menu_open' : 'menu' }}</mat-icon>
+                    </button>
+                <!-- Display the routed content -->
+                <router-outlet></router-outlet>
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+      
