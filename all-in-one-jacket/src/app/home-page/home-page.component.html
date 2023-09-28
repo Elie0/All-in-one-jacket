@@ -7,35 +7,33 @@
     <!-- Add any other meta tags, stylesheets, or scripts here -->
 </head>
 <body>
-    <div class="container">
-    
-
+    <div>
         <!-- Main Content -->
         <div class="background-container">
             <div class="center-container">
-                <div class="content">
-                    <h1 class="TITLE"> Live Monitor </h1>
+                <div [ngClass]="{'pushed-aside': isSidebarOpen}" class="container" class="content">
+                    <h1 class="TITLE">Live Monitor</h1>
                     <mat-accordion>
                         <mat-expansion-panel (opened)="panel1OpenState = true"
-                        (closed)="panel1OpenState = false" >
+                        (closed)="panel1OpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     Temperature
                                 </mat-panel-title>
-                                <mat-panel-description>
-                                    {{panel1OpenState ? '  hide' : '  show'}}
+                                <mat-panel-description class="move">
+                                    {{panel1OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p> Body Temperature: {{Temp}} °C </p>
+                            <p>Body Temperature: {{Temp}} °C</p>
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panelOpenState = true"
                                             (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    Heart Rate
+                                    HeartRate
                                 </mat-panel-title>
-                                <mat-panel-description>
-                                {{panelOpenState ? '  hide' : '  show'}}
+                                <mat-panel-description class="move2">
+                                {{panelOpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>Building In Progress</p>
@@ -44,10 +42,10 @@
                         (closed)="panel2OpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    Blood Pressure
+                                    BloodPressure
                                 </mat-panel-title>
-                                <mat-panel-description>
-                                {{panel2OpenState ? '  hide' : '  show'}}
+                                <mat-panel-description  class="move3">
+                                {{panel2OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>Building In Progress</p>

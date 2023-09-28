@@ -3,18 +3,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
-    position: absolute; /* Adjust position if necessary */
-
-    
+    height: 100vh; /* Set height to 100% of viewport height */
+    position: relative;
   }
   
   .mat-sidenav-container {
-    position: absolute; /* Adjust position if necessary */
-    top: 0;
-    bottom: 0;
-    left: 0;
-    
+    position: relative; /* Adjust position if necessary */
+    width: 100%; /* Set width to 100% for mobile */
+    height: auto; /* Set height to 'auto' for mobile */
+    margin-bottom: 20px;
   }
   
   .center-container {
@@ -28,17 +25,6 @@
     align-items: center;    
   }
   
-  
-  .content {
-    width: 25%; /* Adjust the width as needed */
-    height: 50.5%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.818); /* Opaque white background color */
-    border: 1px solid #ddd; /* Optional: Add a border */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.6); /* Add a box shadow */
-  }
-
   .mat-expansion-panel-header {
     margin-bottom: 20px;
   }
@@ -50,13 +36,63 @@
     top:20px;   
   }
 
-  .TITLE{
-    position: relative;
-    margin-left: 108px;
-    margin-top: 8px;
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the title bold */
-    color: #007bff; /* Change the color to your desired color */
-    font-family: Arial, sans-serif; /* Specify the font family */
-    text-transform: uppercase; /* Make the text uppercase */
+  .content {
+    width: 83%;
+    height: 57%; /* Change to 'auto' for mobile */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.818);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Title */
+  .TITLE {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center; /* Center align the title for mobile */
+    margin-top: 8px; /* Adjust margin as needed */
+  }
+  
+  /* Margin and style adjustments for larger screens (e.g., tablets and above) */
+  @media (min-width: 768px) {
+    .content {
+      width: 25%;
+      height: 50.5%;
+    }
+  
+    .TITLE {
+      text-align: left; /* Adjust text alignment for larger screens */
+      margin-left: 108px;
+      margin-top: 0; /* Reset top margin for larger screens */
+    }
+   
+    .mat-sidenav-container {
+        position: absolute; /* Adjust position for larger screens */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: auto; /* Reset width for larger screens */
+        height: 100%; /* Reset height for larger screens */
+        margin-bottom: 0; /* Reset margin for larger screens */
+      } 
+  }
+
+  @media (max-width: 767px) {
+    .pushed-aside {
+      margin-left: 130px; /* Adjust the width based on your sidebar's width */
+      transition: margin-left 0.3s ease-in-out; /* Add a smooth transition effect */
+    }
+    .move{
+      margin-left: 45px;
+   }
+   .move2{
+     margin-left: 60px;
+   }
+   .move3{
+    margin-left: 30px;
+  }
   }

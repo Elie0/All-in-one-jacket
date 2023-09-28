@@ -1,24 +1,36 @@
 .mat-sidenav-container {
-    position: absolute; /* Adjust position if necessary */
-    top: 0;
-    bottom: 0;
-    left: 0;
-    
-    
-    
-  }
-  .tp-container {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    
-
- }
-
- mat-sidenav {
-    width: 200px;
   }
-
+  
+  /* Define a class for the opened state of the side navbar */
+  .opened-sidebar {
+    margin-left: 140px; /* Adjust the width of your sidebar */
+  }
+  
+  /* Style the side navbar */
+  .mat-sidenav {
+    width: 130px; /* Adjust the width as needed */
+    transition: width 0.3s ease-in-out; /* Add a smooth transition effect for width changes */
+  }
+  
+  /* Style for active links in the side navbar */
+  .active-link {
+    background-color: #f4eaea; /* Change to your preferred background color */
+    color: #333; /* Change to your preferred text color */
+    font-weight: bold; /* You can apply other styles as needed */
+  }
+  
+  @media (min-width: 768px) {
+    .mat-sidenav {
+      width: 200px; /* Adjust the width for larger screens */
+    }
+    /* Reset margin for larger screens */
+    .opened-sidebar {
+      margin-left: 200px; /* Adjust the width of your sidebar */
+    }
+  }

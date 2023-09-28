@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TogglesideService } from 'app/toggleside.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
-  isOpen = true;
-  
+  constructor(private sidebarService: TogglesideService) {}
+  isOpen = false;
+
   toggleSidebar() {
     this.isOpen = !this.isOpen;
+    this.sidebarService.toggleSidebar();
   }
 
 }
