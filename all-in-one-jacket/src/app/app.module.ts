@@ -16,8 +16,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MainComponent } from './main/main.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OxyHeartComponent } from './oxy-heart/oxy-heart.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { EcgPlotComponent } from './ecg-plot/ecg-plot.component';
+
+const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {} };
+
+
 
 
 
@@ -27,7 +35,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TemperatureComponent,
     HomePageComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    OxyHeartComponent,
+    EcgPlotComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +51,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatChipsModule,
     MatExpansionModule,
     MatSidenavModule,
+    MatProgressSpinnerModule,
     MatListModule,
     MatMenuModule,
     ReactiveFormsModule,
+    SocketIoModule.forRoot(config),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

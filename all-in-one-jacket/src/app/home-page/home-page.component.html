@@ -24,7 +24,8 @@
                                     {{panel1OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p>Body Temperature: {{Temp}} °C</p>
+                            <div  *ngIf="Temp === 'Loading...' || Temp === ''" > <mat-spinner [diameter]="30"> </mat-spinner> </div>
+                            <div *ngIf="Temp !== 'Loading...' " > Body Temperature: {{Temp}} °C</div>
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panelOpenState = true"
                                             (closed)="panelOpenState = false">
@@ -36,7 +37,8 @@
                                 {{panelOpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p>Building In Progress</p>
+                            <div  *ngIf=" OxyHeart==='' " > <mat-spinner [diameter]="30"> </mat-spinner> </div>
+                            <div *ngIf=" OxyHeart!=='' " > Beep Per Minute: {{ OxyHeart?.heartRate }} bpm </div> 
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panel2OpenState = true"
                         (closed)="panel2OpenState = false">
@@ -48,7 +50,8 @@
                                 {{panel2OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p>Building In Progress</p>
+                            <div  *ngIf=" OxyHeart==='' " > <mat-spinner [diameter]="30"> </mat-spinner> </div>
+                            <div *ngIf=" OxyHeart!=='' " > Oxygen Pressure {{ OxyHeart?.spo2 }} % </div>
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>
