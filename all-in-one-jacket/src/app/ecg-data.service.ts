@@ -9,7 +9,7 @@ export class EcgDataService {
 
   constructor(private http:HttpClient) { }
   getData() {
-    return this.http.get('C:/Users/eliea/Desktop/Server/data.json', { responseType: 'text' }).pipe(
+    return this.http.get('assets/data.json', { responseType: 'text' }).pipe(
       map(data => {
         // Split the data by newline to get an array of JSON objects
         const jsonDataArray = data.trim().split('\n');

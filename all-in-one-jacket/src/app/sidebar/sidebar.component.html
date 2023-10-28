@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
  <mat-sidenav-container class="tp-container">
-                <mat-toolbar class="mat-elevation-z8">
-                    <button mat-icon-button (click)="toggleSidebar()">
-                        <mat-icon>{{ isOpen ? 'menu_open' : 'menu' }}</mat-icon>
-                        </button>            
-                  </mat-toolbar>
                 <mat-sidenav mode="side" [opened]="isOpen">
                 <!-- Your navbar content goes here -->
                 <mat-nav-list>
@@ -21,7 +16,7 @@
                 </mat-nav-list>
                 </mat-sidenav>
                 <mat-sidenav-content>
-                    <button style="position: fixed; top:0px;z-index: 2;" mat-button (click)="toggleSidebar()">
+                    <button class="customcolor" style="position: fixed; top:0px;z-index: 2;" mat-icon color="primary"  (click)="toggleSidebar()">
                         <mat-icon>{{ isOpen ? 'menu_open' : 'menu' }}</mat-icon>
                     </button>
                 <!-- Display the routed content -->

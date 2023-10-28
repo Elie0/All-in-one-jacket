@@ -1,0 +1,25 @@
+@media (max-width: 767px) {
+    .chart-container {
+      width: 100%; /* Adjust the size as needed for mobile devices */
+      height: 10000%;
+      margin:auto
+    }
+
+    .BUT{
+      position: relative;
+      top:50px;
+      right:8px;
+      
+    }
+  }
+
+
+  @media (min-width: 767px)
+
+  {
+    .BUT
+    {
+       position: relative;  left:700px;top: 600px;font-size: 50px;
+    }
+    
+  }

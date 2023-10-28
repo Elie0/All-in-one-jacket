@@ -26,7 +26,6 @@ export class HomePageComponent implements OnInit {
   constructor(private TempService: TemperatureService,private sidebarService: TogglesideService,private ox:OxyHeartService) {}
 
   ngOnInit(): void {
-    // Use RxJS interval to make periodic requests (e.g., every 10 seconds)
     this.ox.getMessage().subscribe((message:any) => {
       this.OxyHeart = message;
     });

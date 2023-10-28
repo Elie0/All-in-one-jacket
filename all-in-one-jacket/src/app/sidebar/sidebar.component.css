@@ -24,6 +24,10 @@
     color: #333; /* Change to your preferred text color */
     font-weight: bold; /* You can apply other styles as needed */
   }
+
+  .customcolor{
+    color:rgb(87, 102, 240);
+  }
   
   @media (min-width: 768px) {
     .mat-sidenav {

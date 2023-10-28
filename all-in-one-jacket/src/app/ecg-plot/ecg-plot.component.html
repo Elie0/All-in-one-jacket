@@ -1,4 +1,7 @@
-<button style="margin-left: 60px;"  (click)="stop()">Pause</button>
+<button class="BUT" mat-button color="primary"  (click)="stop()"> <mat-icon> {{ !stopRefresh ? 'pause' : 'play_arrow' }} </mat-icon> </button>
+ <!-- <mat-icon>pause</mat-icon> -->
+
+
 
 <div style="position: relative;top: 40px;" class="chart-container">
     <canvas  id="MyChart" >{{ chart }}</canvas>

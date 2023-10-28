@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EcgDataService } from 'app/ecg-data.service';
 import Chart from 'chart.js/auto';
 import { Subscription, interval } from 'rxjs';
-
 @Component({
   selector: 'app-ecg-plot',
   templateUrl: './ecg-plot.component.html',

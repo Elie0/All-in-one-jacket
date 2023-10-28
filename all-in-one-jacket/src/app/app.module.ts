@@ -22,6 +22,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { OxyHeartComponent } from './oxy-heart/oxy-heart.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { EcgPlotComponent } from './ecg-plot/ecg-plot.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {} };
 
@@ -45,6 +47,8 @@ const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {}
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatCardModule,
