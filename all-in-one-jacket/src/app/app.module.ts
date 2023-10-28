@@ -15,7 +15,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MainComponent } from './main/main.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -26,11 +26,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
 const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {} };
-
-
-
-
-
 
 @NgModule({
   declarations: [

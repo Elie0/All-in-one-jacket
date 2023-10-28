@@ -58,7 +58,8 @@ export class EcgPlotComponent implements OnInit, OnDestroy {
         ],
       },
       options: {
-        aspectRatio: 3
+        aspectRatio: window.innerWidth < 768 ? 1 : 3,  // depending on pixels of dev
+        responsive:true,
       }
     });
   }

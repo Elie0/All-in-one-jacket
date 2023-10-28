@@ -1,8 +1,8 @@
 @media (max-width: 767px) {
     .chart-container {
       width: 100%; /* Adjust the size as needed for mobile devices */
-      height: 10000%;
-      margin:auto
+      height: 400px;
+      margin: auto;  
     }
 
     .BUT{
