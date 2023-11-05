@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/all-in-one-jacket",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

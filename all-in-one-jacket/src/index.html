@@ -16,4 +16,27 @@
   <app-main></app-main>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBUOxiKsVrhWkWshHkmlMV8fdvd__HQJaU",
+    authDomain: "all-in-one-jacket.firebaseapp.com",
+    projectId: "all-in-one-jacket",
+    storageBucket: "all-in-one-jacket.appspot.com",
+    messagingSenderId: "401125443545",
+    appId: "1:401125443545:web:2c28c3ff703613121c3bc8",
+    measurementId: "G-L4DBTXPC7B"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </html>

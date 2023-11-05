@@ -8,9 +8,15 @@
 <body>
     <div>
         <div class="background-container">
-            <div class="center-container">
+          
+        
+           
+              
+            <div > <button  mat-mini-fab color="primary"  *ngIf=" isPhoneScreen==true && !isAppInstalled " style="position:fixed;left:163px;top:20px; z-index:1000 ;"   (click)="installApp()"> <mat-icon>download</mat-icon> </button> </div>    
+            <div class="center-container">           
                 <div [ngClass]="{'pushed-aside': isSidebarOpen}" class="container" class="content">
                     <h1 class="TITLE">Live Monitor</h1>
+                    
                     <mat-accordion>
                         <mat-expansion-panel (opened)="panel1OpenState = true"
                         (closed)="panel1OpenState = false">
@@ -22,8 +28,8 @@
                                     {{panel1OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <div  *ngIf="Temp === 'Loading...' || Temp === ''" > <mat-spinner [diameter]="30"> </mat-spinner> </div>
-                            <div *ngIf="Temp !== 'Loading...' " > Body Temperature: {{Temp}} °C</div>
+                            <div  *ngIf="Tempsocket === 'Loading...' || Tempsocket === ''" > <mat-spinner [diameter]="30"> </mat-spinner> </div>
+                            <div style="position: relative; bottom: 14px;" *ngIf="Tempsocket !== 'Loading...' " > <div style="color: #ea1212;font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;" >  Body Temperature: {{Tempsocket}} °C </div> <br> <div style="color: rgb(90, 113, 213);font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;"> Room Temperature: {{RoomTempSocket}} °C </div>  </div>
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panelOpenState = true"
                                             (closed)="panelOpenState = false">
@@ -42,14 +48,14 @@
                         (closed)="panel2OpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    BloodPressure
+                                    OxygenLevel
                                 </mat-panel-title>
                                 <mat-panel-description  class="move3">
                                 {{panel2OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <div  *ngIf=" OxyHeart==='' " > <mat-spinner [diameter]="30"> </mat-spinner> </div>
-                            <div *ngIf=" OxyHeart!=='' " > Oxygen Pressure {{ OxyHeart?.spo2 }} % </div>
+                            <div class="phone" *ngIf=" OxyHeart!=='' " > OxygenLevel {{ OxyHeart?.spo2 }} % </div>
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>

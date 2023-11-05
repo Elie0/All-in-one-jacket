@@ -24,8 +24,9 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { EcgPlotComponent } from './ecg-plot/ecg-plot.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { DownloadComponent } from './download/download.component';
 
-const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {} };
+const config: SocketIoConfig = { url: 'https://backend-wco3.onrender.com', options: {} };
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ const config: SocketIoConfig = { url: 'http://192.168.123.103:3000', options: {}
     SidebarComponent,
     MainComponent,
     OxyHeartComponent,
-    EcgPlotComponent
+    EcgPlotComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
