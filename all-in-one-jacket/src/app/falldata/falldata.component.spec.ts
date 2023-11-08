@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DownloadComponent } from './download.component';
+import { FalldataComponent } from './falldata.component';
 
-describe('DownloadComponent', () => {
-  let component: DownloadComponent;
-  let fixture: ComponentFixture<DownloadComponent>;
+describe('FalldataComponent', () => {
+  let component: FalldataComponent;
+  let fixture: ComponentFixture<FalldataComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DownloadComponent]
+      declarations: [FalldataComponent]
     });
-    fixture = TestBed.createComponent(DownloadComponent);
+    fixture = TestBed.createComponent(FalldataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

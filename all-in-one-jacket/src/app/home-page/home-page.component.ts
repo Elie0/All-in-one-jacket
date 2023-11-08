@@ -36,14 +36,14 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notification.requestNotificationPermission();
     
-    if(Notification.permission ==='granted'  && (localStorage.getItem('flag') === null || localStorage.getItem('flag') === '1'))
-    {
-      console.log('true')
-      this.notification.subscribeToNotifications();
-      localStorage.setItem('flag','0')
-    }
+    
+    // if (localStorage.getItem('flag') === null || localStorage.getItem('flag') === '1')
+    // {
+    //   console.log('true')
+    //   this.notification.requestNotificationPermission();
+    //   localStorage.setItem('flag','0')
+    // }
 
     // Check if the app is already installed
     this.isAppInstalled = window.matchMedia('(display-mode: standalone)').matches;

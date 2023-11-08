@@ -24,9 +24,17 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { EcgPlotComponent } from './ecg-plot/ecg-plot.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
-import { DownloadComponent } from './download/download.component';
+import { FalldataComponent } from './falldata/falldata.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
-const config: SocketIoConfig = { url: 'https://backend-wco3.onrender.com', options: {} };
+
+
+const config: SocketIoConfig = { url: 'https://jackback.onrender.com', options: {} };
+//const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -36,12 +44,17 @@ const config: SocketIoConfig = { url: 'https://backend-wco3.onrender.com', optio
     MainComponent,
     OxyHeartComponent,
     EcgPlotComponent,
-    DownloadComponent
+    FalldataComponent
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDatepickerModule,
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,

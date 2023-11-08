@@ -24,7 +24,10 @@ export class NotificationService {
       .requestSubscription({
         serverPublicKey: this.publicKey,
       })
-      .then((sub)=>this.sendSubscriptionToServer(sub))
+      .then((sub)=>{
+        console.log(sub)
+        this.sendSubscriptionToServer(sub)
+      })
       .catch((error) => {
         console.error('Error subscribing to push notifications:', error);
       });
@@ -34,25 +37,16 @@ export class NotificationService {
 
 
 
- pushSubscription()
- {
-  if(!this.swPush.isEnabled)
-  {
-    console.log('Notification is not enabled');
-    return;
-  }
-  this.swPush.requestSubscription({
-    serverPublicKey: this.publicKey
-  }).then(sub=>console.log(JSON.stringify(sub))).catch(err=>console.log(err))
- }
 
 
 
 
 
   private sendSubscriptionToServer(subscription: PushSubscription) {
+    console.log('called')
     // Send the subscription to your server using an HTTP request
-    this.http.post('https://backend-wco3.onrender.com/api/subscribe', { subscription }).subscribe(
+    this.http.post('https://jackback.onrender.com/api/subscribe', { subscription }).subscribe(
+     
       (response) => {
         console.log('Subscription sent to server:', response);
       },
@@ -74,9 +68,13 @@ export class NotificationService {
   }
 
   requestNotificationPermission() {
-    return Notification.requestPermission();
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        this.subscribeToNotifications();
+      }
+    });
   }
-
+  
   displayNotification(title: string, options: NotificationOptions) {
     if (this.swRegistration && this.swRegistration.active) {
       this.swRegistration.showNotification(title, options);
