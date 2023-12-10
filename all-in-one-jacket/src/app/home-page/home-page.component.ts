@@ -4,7 +4,7 @@ import { TogglesideService } from 'app/toggleside.service';
 import { NotificationService } from 'app/notification.service';
 import { Subject, Subscription } from 'rxjs';
 import { OxyHeartService } from 'app/oxy-heart.service';
-import { RoomtempService } from 'app/roomtemp.service';
+//import { RoomtempService } from 'app/roomtemp.service';
 
 @Component({
   selector: 'app-home-page',
@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private TempService: TemperatureService,
-    private roomTemp: RoomtempService,
+    //private roomTemp: RoomtempService,
     private sidebarService: TogglesideService,
     private ox: OxyHeartService,
     private notification:NotificationService
@@ -38,12 +38,12 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     
     
-    // if (localStorage.getItem('flag') === null || localStorage.getItem('flag') === '1')
-    // {
-    //   console.log('true')
-    //   this.notification.requestNotificationPermission();
-    //   localStorage.setItem('flag','0')
-    // }
+    if (localStorage.getItem('flag') === null || localStorage.getItem('flag') === '1')
+    {
+      console.log('true')
+      this.notification.requestNotificationPermission();
+      localStorage.setItem('flag','0')
+    }
 
     // Check if the app is already installed
     this.isAppInstalled = window.matchMedia('(display-mode: standalone)').matches;
@@ -68,14 +68,21 @@ export class HomePageComponent implements OnInit {
     });
 
     this.TempService.getTemperatureSocket().subscribe((message: any) => {
-      this.Tempsocket = message;
+      if(message)
+      {
+        localStorage.setItem('Tempsocket', this.Tempsocket);
+        localStorage.setItem('RoomTempSocket', this.RoomTempSocket);
+      }
+      
+      this.Tempsocket = localStorage.getItem('Tempsocket') || 'Loading...';
+      this.RoomTempSocket = localStorage.getItem('Tempsocket')|| 'Loading...d';
       console.log(this.Tempsocket)
     });
 
   
-    this.roomTemp.getMessage().subscribe((m:any)=>{
-      this.RoomTempSocket = m;
-    })
+    // this.roomTemp.getMessage().subscribe((m:any)=>{
+    //   this.RoomTempSocket = m;
+    // })
 
     this.sidebarSubscription = this.sidebarService.sidebarOpen.subscribe(
       (isOpen) => {
@@ -102,16 +109,9 @@ export class HomePageComponent implements OnInit {
 
 
 
- 
-
 subscribeToNotifications() {
   this.notification.subscribeToNotifications();
 }
-
-
-  
-
-
 
 
   ngOnDestroy() {

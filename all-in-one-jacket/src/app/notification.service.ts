@@ -34,14 +34,6 @@ export class NotificationService {
   }
 
 
-
-
-
-
-
-
-
-
   private sendSubscriptionToServer(subscription: PushSubscription) {
     console.log('called')
     // Send the subscription to your server using an HTTP request

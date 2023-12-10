@@ -1,8 +1,11 @@
-<button class="BUT" mat-button color="primary"  (click)="stop()"> <mat-icon> {{ !stopRefresh ? 'pause' : 'play_arrow' }} </mat-icon> </button>
- <!-- <mat-icon>pause</mat-icon> -->
+<div class="background-container">
 
+    <button class="BUT" mat-button color="primary"  (click)="stop()"> <mat-icon> {{ !stopRefresh ? 'pause' : 'play_arrow' }} </mat-icon> </button>
+    <button style="margin-left: 650px" [disabled]="!stopRefresh" class= mat-button color="primary"  (click)="exportChart()"> <mat-icon> download_alt </mat-icon> </button>
+    <button style="margin-left: 650px" [disabled]="!stopRefresh" class= mat-button color="primary"  (click)="SaveChartdb()"> <mat-icon> save_alt </mat-icon> </button>
+   
+   <div style="position: relative;top: 40px;" class="chart-container">
+       <canvas  id="MyChart" >{{ chart }}</canvas>
+   </div>  
 
-
-<div style="position: relative;top: 40px;" class="chart-container">
-    <canvas  id="MyChart" >{{ chart }}</canvas>
-</div>  
+</div>

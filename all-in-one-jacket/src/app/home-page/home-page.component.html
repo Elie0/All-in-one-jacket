@@ -7,11 +7,7 @@
 </head>
 <body>
     <div>
-        <div class="background-container">
-          
-        
-           
-              
+        <div class="background-container">      
             <div > <button  mat-mini-fab color="primary"  *ngIf=" isPhoneScreen==true && !isAppInstalled " style="position:fixed;left:163px;top:20px; z-index:1000 ;"   (click)="installApp()"> <mat-icon>download</mat-icon> </button> </div>    
             <div class="center-container">           
                 <div [ngClass]="{'pushed-aside': isSidebarOpen}" class="container" class="content">

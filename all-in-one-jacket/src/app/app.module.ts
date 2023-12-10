@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { TemperatureComponent } from './temperature/temperature.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,15 +29,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import { environment } from 'Environments/environment';
 
 
-
-const config: SocketIoConfig = { url: 'https://jackback.onrender.com', options: {} };
+const config: SocketIoConfig = { url:environment.apiUrl, options: {} };
+//const config: SocketIoConfig = { url: 'https://jackback.onrender.com', options: {} };
 //const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
-    TemperatureComponent,
     HomePageComponent,
     SidebarComponent,
     MainComponent,
@@ -49,6 +49,7 @@ const config: SocketIoConfig = { url: 'https://jackback.onrender.com', options: 
   imports: [
     BrowserModule,
     MatInputModule,
+    MatTableModule,
     FormsModule,
     MatFormFieldModule,
     MatNativeDateModule,
