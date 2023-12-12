@@ -71,7 +71,7 @@ export class FalldataComponent {
     });
   }
 
-  checkBothDatesSelected(): void {
+    checkBothDatesSelected(): void {
     this.bothDatesSelected = this.selectedStartDate && this.selectedEndDate;
   }
 

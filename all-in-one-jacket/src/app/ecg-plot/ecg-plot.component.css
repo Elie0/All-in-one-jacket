@@ -5,10 +5,30 @@
       margin: auto;  
     }
 
+    .button-container {
+      display: flex;
+      margin-right: 180px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+  }
+
+  .cloud{
+    position: relative;
+    left: 180px;
+    bottom: 49.8px;
+  }
+  
+  button {
+      margin: 5px;
+  }
+
+
     .BUT{
       position: relative;
       top:50px;
-      right:8px;
+      left:95px;
       
     }
   }
@@ -19,7 +39,24 @@
   {
     .BUT
     {
-       position: relative;  left:700px;top: 600px;font-size: 50px;
+       position: relative;  left:180px;top: 600px;font-size: 50px;
     }
+    .button-container {
+      display: flex;
+      margin-right: 180px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+  }
+  
+  button {
+      margin: 10px;
+  }
+
+  .chart-container {
+    margin-left: 180px;
+    margin-top: 50px;  
+  }
     
   }

@@ -31,6 +31,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { environment } from 'Environments/environment';
+import { EcgplotsComponent } from './ecgplots/ecgplots.component';
+
 
 
 const config: SocketIoConfig = { url:environment.apiUrl, options: {} };
@@ -44,7 +46,8 @@ const config: SocketIoConfig = { url:environment.apiUrl, options: {} };
     MainComponent,
     OxyHeartComponent,
     EcgPlotComponent,
-    FalldataComponent
+    FalldataComponent,
+    EcgplotsComponent
   ],
   imports: [
     BrowserModule,

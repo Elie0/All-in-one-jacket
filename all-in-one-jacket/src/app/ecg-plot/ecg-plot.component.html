@@ -1,11 +1,28 @@
-<div class="background-container">
-
-    <button class="BUT" mat-button color="primary"  (click)="stop()"> <mat-icon> {{ !stopRefresh ? 'pause' : 'play_arrow' }} </mat-icon> </button>
-    <button style="margin-left: 650px" [disabled]="!stopRefresh" class= mat-button color="primary"  (click)="exportChart()"> <mat-icon> download_alt </mat-icon> </button>
-    <button style="margin-left: 650px" [disabled]="!stopRefresh" class= mat-button color="primary"  (click)="SaveChartdb()"> <mat-icon> save_alt </mat-icon> </button>
-   
-   <div style="position: relative;top: 40px;" class="chart-container">
-       <canvas  id="MyChart" >{{ chart }}</canvas>
-   </div>  
-
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="background-container">
+        <div class="button-container">
+            <button class="BUT" mat-button color="primary" (click)="stop()">
+                <mat-icon>{{ !stopRefresh ? 'pause' : 'play_arrow' }}</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" [disabled]="!stopRefresh" (click)="exportChart()">
+                <mat-icon>download_alt</mat-icon>
+                <span>Local</span>
+            </button>
+            <button class="cloud" mat-raised-button color="primary" [disabled]="!stopRefresh" (click)="SaveChartdb()">
+                <mat-icon>save_alt</mat-icon>
+                <span>Cloud</span>
+            </button>
+        </div>
+        <div class="chart-container">
+            <canvas id="MyChart">{{ chart }}</canvas>
+        </div>
+    </div>
+</body>
+</html>

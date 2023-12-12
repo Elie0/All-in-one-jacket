@@ -3,6 +3,8 @@ import { EcgDataService } from 'app/ecg-data.service';
 import { HttpClient } from '@angular/common/http';
 import Chart from 'chart.js/auto';
 import { Subscription, interval } from 'rxjs';
+import sweetAlert from 'sweetalert2';
+import { environment } from 'Environments/environment';
 import { takeWhile,switchMap,filter,repeat } from 'rxjs/operators';
 @Component({
   selector: 'app-ecg-plot',
@@ -54,10 +56,9 @@ export class EcgPlotComponent implements OnInit, OnDestroy {
         datasets: [
           {
             label: 'ECG Values',
-            data: this.points.map((point) => point.ecgVal),
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.01,
+            data: this.points.map((point:any)=>point.ecgval),
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
           },
         ],
       },
@@ -90,19 +91,42 @@ export class EcgPlotComponent implements OnInit, OnDestroy {
   }
 
   SaveChartdb(): void {
-   const pointsToSend = this.points;
-   this.http.post('http://localhost:3000/api/SaveECG',{pointsToSend}).subscribe(
-     
-   (response) => {
-     console.log('Points Sent!:', response);
-   },
-   (error) => {
-     console.error('Error sending Points:', error);
-   }
- );
+    const pointsToSend = this.points;
+    const chartName = prompt('Enter a name for this chart:'); 
+
+    if (chartName) {
+      this.http.post(`${environment.apiUrl}/api/SaveECG`, { name: chartName, points: pointsToSend }).subscribe(
+        (response: any) => {
+          if (response.success) {
+            console.log('Chart saved successfully:', response);
+            sweetAlert.fire({
+              title: 'Success!',
+              text: 'Chart saved successfully!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
+          } else if(!response.success) {
+            alert(response.error);
+          }
+        },
+        (error) => {
+          sweetAlert.fire({
+            title: 'Failed!',
+            text: `Chart Failed to save! `,
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+          console.error('Error saving chart:', error);
+        }
+      );
+    } else {
+      console.log('User canceled chart save.');
+    }
+ }
 }
   
-}
+  
+
 
 
 

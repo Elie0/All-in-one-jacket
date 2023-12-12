@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
-import { OxyHeartComponent } from './oxy-heart/oxy-heart.component';
+import { EcgplotsComponent } from './ecgplots/ecgplots.component'; 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EcgPlotComponent } from './ecg-plot/ecg-plot.component';
 import { FalldataComponent } from './falldata/falldata.component';
@@ -14,7 +14,8 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'heart', component: EcgPlotComponent },
-      { path: 'fallData', component: FalldataComponent }
+      { path: 'fallData', component: FalldataComponent },
+      { path: 'Plots', component: EcgplotsComponent }
     ],
   },
 ];
