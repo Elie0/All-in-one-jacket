@@ -1,4 +1,15 @@
-Here are the Main parts of our project, where you can access the Angular front-end using the All-IN-ONE-JACKET folder and the Backend using the Server Folder.
+Here are the Main parts of our project: 
+
+
+where you can access the Angular front-end using the All-IN-ONE-JACKET folder
+
+
+
+the Backend using the Server Folder
+
+
+
+The arduino code using the FV.ino file 
 
 
 
@@ -10,5 +21,5 @@ note that you can always check the code functionality without setting anything u
 
 
 
-you just need to buy your own arduino and do the required sensor wiring and use the code we will uploaded here for the arduino: 
+you just need to buy your own arduino and do the required sensor wiring and use the code uploaded in the FV.ino on your arduino: https://github.com/Elie0/All-in-one-jacket/blob/main/FV.ino
 
