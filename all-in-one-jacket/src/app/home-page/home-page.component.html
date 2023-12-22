@@ -24,8 +24,8 @@
                                     {{panel1OpenState ? 'hide' : 'show'}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <div  *ngIf="Tempsocket === 'Loading...' || Tempsocket === ''" > <mat-spinner [diameter]="30"> </mat-spinner> </div>
-                            <div style="position: relative; bottom: 14px;" *ngIf="Tempsocket !== 'Loading...' " > <div style="color: #ea1212;font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;" >  Body Temperature: {{Tempsocket}} °C </div> <br> <div style="color: rgb(90, 113, 213);font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;"> Room Temperature: {{RoomTempSocket}} °C </div>  </div>
+                            <div  *ngIf="Tempsocket === '' " > <mat-spinner [diameter]="30"> </mat-spinner> </div>
+                            <div style="position: relative; bottom: 14px;" *ngIf="Tempsocket !== '' " > <div style="color: #ea1212;font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;" >  Body Temperature: {{Tempsocket?.bodytemperature}} °C </div> <br> <div style="color: rgb(90, 113, 213);font-family: Georgia, 'Times New Roman', Times, serif;font-size: larger;"> Room Temperature: {{Tempsocket?.roomtemperature}} °C </div>  </div>
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panelOpenState = true"
                                             (closed)="panelOpenState = false">

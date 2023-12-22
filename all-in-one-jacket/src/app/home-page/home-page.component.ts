@@ -22,14 +22,13 @@ export class HomePageComponent implements OnInit {
   panel2OpenState = false;
   isSidebarOpen = false;
   Temp: string = 'Loading...';
-  Tempsocket: string = 'Loading...';
+  Tempsocket: any = '';
   RoomTempSocket: string = 'Loading...';
   private destroy$: Subject<void> = new Subject();
   isAppInstalled: any;
 
   constructor(
     private TempService: TemperatureService,
-    //private roomTemp: RoomtempService,
     private sidebarService: TogglesideService,
     private ox: OxyHeartService,
     private notification:NotificationService
@@ -66,17 +65,14 @@ export class HomePageComponent implements OnInit {
     this.ox.getMessage().subscribe((message: any) => {
       this.OxyHeart = message;
     });
+    
+    this.Tempsocket = this.TempService.getLastTemperature()  ;
 
     this.TempService.getTemperatureSocket().subscribe((message: any) => {
-      if(message)
-      {
-        localStorage.setItem('Tempsocket', this.Tempsocket);
-        localStorage.setItem('RoomTempSocket', this.RoomTempSocket);
-      }
-      
-      this.Tempsocket = localStorage.getItem('Tempsocket') || 'Loading...';
-      this.RoomTempSocket = localStorage.getItem('Tempsocket')|| 'Loading...d';
+      this.TempService.setLastTemperature(message);
+      this.Tempsocket = message
       console.log(this.Tempsocket)
+      console.log(message)
     });
 
   
