@@ -1,11 +1,14 @@
 Here are the Main parts of our project: 
 
 
-where you can access the Angular front-end using the All-IN-ONE-JACKET folder
+where you can access:
+
+
+the Angular front-end using the All-IN-ONE-JACKET folder
 
 
 
-the Backend using the Server Folder
+the Backend using this another github Link: https://github.com/Elie0/JackDuino/blob/master/server.js
 
 
 
